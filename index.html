@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños Zoe!</title>
+    <style>
+        /* Estilos generales con estética bonita y moderna */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 100%);
+            color: #4a4a4a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;      
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            color: #ff477e;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ff7096;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        /* Sección de fotos de Joong y Dunk */
+        .photo-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            width: 45%;
+            min-width: 180px;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .photo-card p {
+            margin: 8px 0 0 0;
+            font-weight: 600;
+            color: #ff5c8a;
+            font-size: 0.9rem;
+        }
+
+        /* Mensaje especial */
+        .message-box {
+            background-color: #fff0f3;
+            border-left: 5px solid #ff477e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .btn-confetti {
+            background-color: #ff477e;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(255, 71, 126, 0.3);
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .btn-confetti:hover {
+            background-color: #ff7096;
+            transform: translateY(-2px);
+        }
+
+        .btn-confetti:active {
+            transform: translateY(1px);
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>¡Feliz Cumpleaños, Zoe! 💖</h1>
+        <div class="subtitle">¡Hoy se celebra en grande!</div>
+
+        <div class="photo-gallery">
+            <div class="photo-card">
+                <img src="dunk.jpg.jpg" alt="Joong">
+                <p> ✨</p>  
+            </div>
+            <div class="photo-card">
+                <img src="joong.jpg.jpg" alt="Dunk">
+                <p> ✨</p>
+            </div>
+        </div>
+
+        <div class="message-box">
+            <p><strong>Querida Zoe,</strong></p>
+            <p>¡Muchísimas felicidades en tu día! Espero que pases un cumpleaños increíble, lleno de muchísima felicidad, risas y momentos inolvidables. Eres una persona súper especial y te mereces todo lo mejor del mundo hoy y siempre.</p>
+            <p>Que todos tus proyectos, metas y sueños se cumplan . Gracias por ser una amiga tan genial.</p>
+            <p style="text-align: right; font-weight: bold; color: #ff477e;">¡Disfruta mucho tu día! 🎉</p>
+        </div>
+
+        <button class="btn-confetti" onclick="lanzarConfetti()">¡Presiona para celebrar!</button>
+    </div>
+
+    <script>
+        // Función para activar el confeti al abrir la página y al presionar el botón
+        function lanzarConfetti() {
+            confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { y: 0.6 },
+                colors: ['#ff477e', '#ff7096', '#ff9fbc', '#ffc2d1', '#ffffff']
+            });
+        }
+
+        // Se ejecuta automáticamente al cargar la página
+        window.onload = function() {
+            setTimeout(lanzarConfetti, 500);
+        };
+    </script>
+
+</body>
+</html>                          
